@@ -246,15 +246,16 @@ export default function Home() {
               <div>
                 <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-[#EE353D]">At the table</p>
                 <h2 className="text-3xl font-black leading-[0.95] tracking-tight text-white sm:text-4xl lg:text-5xl">
-                  Regulated, bonded, and helping shape the market.
+                  Licensed, bonded,
+                  <span className="block italic font-light text-white/70">on the board.</span>
                 </h2>
                 <p className="mt-5 text-white/70 leading-relaxed">
-                  Our CEO Farhan Adam serves as <span className="font-semibold text-white">EVP &amp; Treasurer of the Global Pulses Confederation</span>, the apex body of the world's pulse industry. We don't just trade the market; we help shape it.
+                  Marina holds a seat on the executive board of the Global Pulses Confederation, the apex body of the world's pulse industry, alongside the Canadian Grain Commission Grain Dealer's Licence and full CFIA phytosanitary compliance.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-white/75">
                   <span className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[#EE353D]" /> CGC Licensed &amp; Bonded</span>
                   <span className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[#EE353D]" /> CFIA Phytosanitary Compliant</span>
-                  <span className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[#EE353D]" /> GPC President's Club</span>
+                  <span className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-[#EE353D]" /> GPC Executive Board</span>
                 </div>
               </div>
               <div className="flex items-center justify-center">
@@ -287,44 +288,38 @@ export default function Home() {
           </Reveal>
         </div>
 
-        {/* Team — editorial portraits */}
-        <div className="mt-20">
+        {/* Team — masthead strip, no cards */}
+        <div className="mt-24 border-t border-white/10 pt-12">
           <Reveal>
-            <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-[#EE353D]">Leadership</p>
-            <h3 className="mb-10 text-3xl font-black text-white sm:text-4xl">The desk.</h3>
+            <div className="mb-10 flex items-baseline justify-between gap-6">
+              <div>
+                <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-[#EE353D]">Leadership</p>
+                <h3 className="text-2xl font-black text-white sm:text-3xl">Run as a family. Traded as a desk.</h3>
+              </div>
+              <p className="hidden max-w-xs text-sm leading-relaxed text-white/55 sm:block">
+                The Adam family has worked these markets together since 1995.
+              </p>
+            </div>
           </Reveal>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
-            {team.map((m, i) => (
-              <Reveal key={m.name} delay={i * 0.08}>
-                <figure className="group">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-[#11151f]">
+          <Reveal delay={0.1}>
+            <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+              {team.map((m) => (
+                <figure key={m.name} className="group bg-[#0a0d14]">
+                  <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[3/4]">
                     <img
                       src={m.photo}
                       alt={m.name}
-                      className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-[1.2s] group-hover:grayscale-0 group-hover:scale-105"
+                      className="h-full w-full object-cover grayscale transition-all duration-[1.4s] group-hover:scale-[1.04] group-hover:grayscale-0"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#080A0F]/85 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/60">{m.title}</p>
-                      <h4 className="mt-1 text-2xl font-bold text-white">{m.name}</h4>
-                    </div>
                   </div>
-                  <figcaption className="mt-4 text-sm leading-relaxed text-white/65">
-                    {m.bio}
+                  <figcaption className="border-t border-white/10 p-4 sm:p-5">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45">{m.title}</p>
+                    <p className="mt-1 text-base font-semibold text-white sm:text-lg">{m.name}</p>
                   </figcaption>
-                  {m.credentials && (
-                    <ul className="mt-3 space-y-1">
-                      {m.credentials.map((c) => (
-                        <li key={c} className="flex items-center gap-2 text-xs font-medium text-[#EE353D]">
-                          <span className="h-1 w-1 rounded-full bg-[#EE353D]" />{c}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </figure>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 

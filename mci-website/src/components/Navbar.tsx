@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { logo } from '../data/assets';
 
 const links = [
   { label: 'Commodities', to: '/commodities' },
@@ -10,80 +12,87 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#080A0F]/90 backdrop-blur-sm border-b border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-[#F4F7FB] font-bold text-lg tracking-tight leading-none">
-              marina
-              <span className="block text-[9px] font-medium tracking-[0.2em] text-[#8A8FA8] uppercase mt-0.5">
-                commodities inc
-              </span>
-            </span>
-          </Link>
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed inset-x-0 top-0 z-50 px-3 sm:px-6 pt-3"
+    >
+      <nav
+        className={`mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 transition-all duration-300 ${
+          scrolled
+            ? 'h-14 border border-white/10 bg-[#0b0e15]/80 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)]'
+            : 'h-16 border border-white/5 bg-white/[0.02] backdrop-blur-md'
+        }`}
+      >
+        <Link to="/" className="flex shrink-0 items-center">
+          <img src={logo} alt="Marina Commodities Inc" className="h-7 w-auto sm:h-8" />
+        </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {links.map((l) => (
-              <Link
-                key={l.label}
-                to={l.to}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  pathname === l.to
-                    ? 'text-[#F4F7FB]'
-                    : 'text-[#F4F7FB]/60 hover:text-[#F4F7FB]'
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Right side */}
-          <div className="hidden md:flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-xs text-[#8A8FA8]">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              Desk open · 20+ markets
-            </span>
+        <div className="hidden items-center gap-7 md:flex">
+          {links.map((l) => (
             <Link
-              to="/contact"
-              className="bg-[#EE353D] hover:bg-[#D42E35] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 whitespace-nowrap"
+              key={l.label}
+              to={l.to}
+              className={`text-sm font-medium transition-colors ${
+                pathname === l.to ? 'text-white' : 'text-white/55 hover:text-white'
+              }`}
             >
-              Talk to the Desk →
+              {l.label}
             </Link>
-          </div>
-
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden text-[#F4F7FB] p-2"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            {open ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+          ))}
         </div>
 
-        {/* Mobile menu */}
+        <div className="hidden items-center gap-4 md:flex">
+          <span className="flex items-center gap-1.5 text-xs text-[#8A8FA8]">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Desk open
+          </span>
+          <Link
+            to="/contact"
+            className="group relative overflow-hidden rounded-full bg-[#EE353D] px-5 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
+          >
+            <span className="relative z-10">Talk to the Desk →</span>
+            <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-0" />
+          </Link>
+        </div>
+
+        <button
+          className="p-2 text-white md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeWidth={2} d={open ? 'M6 18L18 6M6 6l12 12' : 'M4 7h16M4 12h16M4 17h16'} />
+          </svg>
+        </button>
+      </nav>
+
+      <AnimatePresence>
         {open && (
-          <div className="md:hidden py-4 border-t border-white/5 space-y-3">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="mx-auto mt-2 max-w-6xl rounded-3xl border border-white/10 bg-[#0b0e15]/95 p-5 backdrop-blur-xl md:hidden"
+          >
             {links.map((l) => (
               <Link
                 key={l.label}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="block text-[#F4F7FB]/70 hover:text-[#F4F7FB] text-sm font-medium py-2 transition-colors"
+                className="block py-2.5 text-base font-medium text-white/80 hover:text-white"
               >
                 {l.label}
               </Link>
@@ -91,13 +100,13 @@ export default function Navbar() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="block bg-[#EE353D] hover:bg-[#D42E35] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors text-center mt-4"
+              className="mt-3 block rounded-full bg-[#EE353D] py-3 text-center text-sm font-semibold text-white"
             >
               Talk to the Desk →
             </Link>
-          </div>
+          </motion.div>
         )}
-      </div>
-    </header>
+      </AnimatePresence>
+    </motion.header>
   );
 }

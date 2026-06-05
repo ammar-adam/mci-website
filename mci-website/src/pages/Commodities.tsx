@@ -15,7 +15,7 @@ export default function Commodities() {
   return (
     <>
       <Helmet>
-        <title>Pulses &amp; Grains for Export | Lentils, Chickpeas, Peas, Beans — Marina Commodities</title>
+        <title>Pulses &amp; Grains for Export | Lentils, Chickpeas, Peas, Beans, Marina Commodities</title>
         <meta name="description" content="Full commodity book: red and green lentils, kabuli & desi chickpeas, yellow & green peas, kidney beans, canary seed, sunflower, and specialty crops. Graded to specification." />
         <meta name="keywords" content="red lentils export Canada, chickpea supplier, yellow peas exporter, pulse commodities Canada, grain exporter Mississauga, bulk beans supplier" />
         <meta property="og:title" content="Pulses & Grains for Export | Marina Commodities" />
@@ -36,7 +36,7 @@ export default function Commodities() {
             </p>
             <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">A full book,<br />graded to spec.</h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
-              Our commodity book spans lentils, peas, chickpeas, beans, grains and specialty crops — sourced from prairie growers across Western Canada and Australia, graded to the buyer's exact specification.
+              Our commodity book spans lentils, peas, chickpeas, beans, grains and specialty crops, sourced from prairie growers across Western Canada and Australia, graded to the buyer's exact specification.
             </p>
           </Reveal>
         </div>
@@ -78,7 +78,7 @@ export default function Commodities() {
               </p>
               <h2 className="mb-6 text-3xl font-black text-white">Every lot graded before it ships.</h2>
               <div className="space-y-4 text-sm leading-relaxed text-white/65">
-                <p>All product is inspected and graded to the agreed specification — screen size, moisture, admixture, colour — with full documentation provided before shipment. We work with licensed third-party inspection bodies and comply with all Canadian Food Inspection Agency (CFIA) phytosanitary requirements.</p>
+                <p>All product is inspected and graded to the agreed specification (screen size, moisture, admixture, colour) with full documentation provided before shipment. We work with licensed third-party inspection bodies and comply with all Canadian Food Inspection Agency (CFIA) phytosanitary requirements.</p>
                 <p>Our CGC Grain Dealer's Licence and bonding provides counterparty security. Every contract is backed by our standing with the Canadian Grain Commission.</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -124,7 +124,7 @@ export default function Commodities() {
               <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
                 <div>
                   <h2 className="text-2xl font-black text-white">Need a specific grade or origin?</h2>
-                  <p className="mt-1 text-white/65">Talk to our desk — we'll find what you need.</p>
+                  <p className="mt-1 text-white/65">Talk to our desk and we'll find what you need.</p>
                 </div>
                 <Link to="/contact" className="whitespace-nowrap rounded-full bg-[#EE353D] px-6 py-3 font-semibold text-white transition-transform hover:scale-[1.03]">Talk to the Desk →</Link>
               </div>

@@ -10,7 +10,7 @@ export const commodityGroups: CommodityGroup[] = [
   {
     id: 1,
     name: 'Lentils',
-    description: 'Red, green and French — sourced from prairie growers and graded for colour, size and cook. The core of our book.',
+    description: 'Red, green and French, sourced from prairie growers and graded for colour, size and cook. The core of our book.',
     varieties: ['Red Split', 'Football', 'Laird', 'Eston', 'French Green'],
     flagship: true,
   },

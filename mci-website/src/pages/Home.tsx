@@ -28,10 +28,10 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Marina Commodities — Canadian Pulse &amp; Grain Exporter | 20+ Markets</title>
+        <title>Marina Commodities | Canadian Pulse &amp; Grain Exporter, 20+ Markets</title>
         <meta name="description" content="Leading Canadian exporter of lentils, chickpeas, peas and beans to 20+ countries. CGC licensed & bonded. Trading desks in Mississauga and Australia. Est. 1995." />
         <meta name="keywords" content="Canadian pulse exporter, bulk lentils supplier Canada, chickpea exporter Mississauga, grain trading house Canada, CGC licensed grain dealer" />
-        <meta property="og:title" content="Marina Commodities — Canadian Pulse & Grain Exporter" />
+        <meta property="og:title" content="Marina Commodities, Canadian Pulse & Grain Exporter" />
         <meta property="og:description" content="Sourcing, grading and shipping lentils, peas, chickpeas and beans to 20+ markets worldwide." />
         <meta property="og:image" content={img.pulsesBowls} />
         <meta property="og:type" content="website" />
@@ -92,7 +92,7 @@ export default function Home() {
             className="mt-7 max-w-xl text-lg leading-relaxed text-white/70"
           >
             Marina Commodities sources, grades and ships lentils, peas, chickpeas, beans and
-            specialty crops from Canada and Australia to buyers across 20+ markets — with the
+            specialty crops from Canada and Australia to buyers across 20+ markets, with the
             speed and clarity of a modern trading desk.
           </motion.p>
 
@@ -221,11 +221,11 @@ export default function Home() {
               </p>
               <h2 className="text-4xl font-black leading-tight text-white sm:text-5xl">Regulated, bonded, and at the table.</h2>
               <p className="mt-6 max-w-md text-[#8A8FA8] leading-relaxed">
-                Our CEO Farhan Adam serves as <strong className="text-white">EVP &amp; Treasurer of the Global Pulses Confederation</strong> — the apex body of the world's pulse industry. We don't just trade the market; we help shape it.
+                Our CEO Farhan Adam serves as <strong className="text-white">EVP &amp; Treasurer of the Global Pulses Confederation</strong>, the apex body of the world's pulse industry. We don't just trade the market; we help shape it.
               </p>
               <div className="mt-8 space-y-3">
                 {[
-                  ['CGC Licensed & Bonded', 'Canadian Grain Commission Grain Dealer\'s Licence — security on every contract.'],
+                  ['CGC Licensed & Bonded', 'Canadian Grain Commission Grain Dealer\'s Licence. Security on every contract.'],
                   ['Global Pulses Confederation', 'Leadership on the board of the world\'s apex pulse-industry body.'],
                   ['Graded to Specification', 'Inspected and documented to the agreed spec before every shipment.'],
                 ].map(([t, d]) => (

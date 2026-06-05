@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <img src={logo} alt="Marina Commodities Inc" className="h-9 w-auto" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-[#8A8FA8]">
-              One of Canada's leading exporters and trading houses of pulses and grains —
+              One of Canada's leading exporters and trading houses of pulses and grains,
               licensed &amp; bonded with the Canadian Grain Commission for the Grain Dealer's Licence.
             </p>
             <div className="mt-6 flex gap-3">

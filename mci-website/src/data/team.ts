@@ -12,7 +12,7 @@ export const team: TeamMember[] = [
     title: 'Chief Executive Officer',
     bio: 'Farhan leads the commercial and administrative activities of Marina Commodities, directing market development for both origination and sales across all global trading desks. He brings deep expertise in pulse and grain markets across Europe, Asia, Africa and the Americas.',
     credentials: [
-      'EVP & Treasurer — Global Pulses Confederation',
+      'EVP & Treasurer, Global Pulses Confederation',
       'CGC Licensed Grain Dealer',
     ],
     linkedin: 'https://linkedin.com',

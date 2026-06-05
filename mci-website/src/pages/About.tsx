@@ -8,7 +8,7 @@ import { img } from '../data/assets';
 
 const values = [
   { title: 'Quality Product', desc: 'We source only from trusted growers and processors, with independent grading and full traceability from field to container.' },
-  { title: 'Firm Commitment', desc: 'Every contract is honoured. Our CGC bond means counterparties have security on every transaction — no exceptions.' },
+  { title: 'Firm Commitment', desc: 'Every contract is honoured. Our CGC bond means counterparties have security on every transaction, no exceptions.' },
   { title: 'Timely Shipments', desc: 'Coordinated logistics across multiple origin ports ensure product arrives on schedule, every time.' },
   { title: 'Global Networks', desc: 'Four decades of relationships across Europe, Asia, Africa and the Americas means faster execution and deeper market intelligence.' },
 ];
@@ -66,8 +66,8 @@ export default function About() {
             <Reveal>
               <h2 className="mb-6 text-3xl font-black text-white">A continued growth story</h2>
               <div className="space-y-4 leading-relaxed text-white/65">
-                <p>Marina Commodities was established in <strong className="text-white">1995</strong> as the agricultural trading arm of Marina Textiles Inc. — one of Canada's largest textile importers and distributors. From the outset, the focus was on domestic trading and exporting agricultural products: peas, chickpeas, lentils and beans to markets around the globe.</p>
-                <p>In a relatively short period, Marina Commodities built strong relationships with buyers across Europe, Asia, Africa and the Americas. Today we operate two trading desks — in <strong className="text-white">Mississauga, Ontario</strong> and <strong className="text-white">Eight Mile Plains, Australia</strong> — giving us year-round origination across both the Canadian and Australian pulse harvest cycles.</p>
+                <p>Marina Commodities was established in <strong className="text-white">1995</strong> as a member of <strong className="text-white">Marina Group of Canada</strong>, one of the country's most established privately held groups. From the outset, the focus was on domestic trading and exporting agricultural products: peas, chickpeas, lentils and beans to markets around the globe.</p>
+                <p>In a relatively short period, Marina Commodities built strong relationships with buyers across Europe, Asia, Africa and the Americas. Today we operate two trading desks, in <strong className="text-white">Mississauga, Ontario</strong> and <strong className="text-white">Eight Mile Plains, Australia</strong>, giving us year-round origination across both the Canadian and Australian pulse harvest cycles.</p>
                 <p>Our success comes from an unrelenting emphasis on <strong className="text-white">service and quality</strong>: product graded to the buyer's exact specification, contracts honoured without exception, and shipments delivered on time.</p>
               </div>
             </Reveal>

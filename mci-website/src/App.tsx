@@ -3,8 +3,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
-import Commodities from './pages/Commodities';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -15,9 +13,8 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/commodities" element={<Commodities />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
         <Footer />

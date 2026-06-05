@@ -294,10 +294,10 @@ export default function Home() {
             <div className="mb-10 flex items-baseline justify-between gap-6">
               <div>
                 <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.25em] text-[#EE353D]">Leadership</p>
-                <h3 className="text-2xl font-black text-white sm:text-3xl">Run as a family. Traded as a desk.</h3>
+                <h3 className="text-2xl font-black text-white sm:text-3xl">The desk.</h3>
               </div>
               <p className="hidden max-w-xs text-sm leading-relaxed text-white/55 sm:block">
-                The Adam family has worked these markets together since 1995.
+                Three principals running origination, trading and operations across the Mississauga and Brisbane desks.
               </p>
             </div>
           </Reveal>
@@ -305,11 +305,11 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
               {team.map((m) => (
                 <figure key={m.name} className="group bg-[#0a0d14]">
-                  <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[3/4]">
+                  <div className="relative aspect-square overflow-hidden">
                     <img
                       src={m.photo}
                       alt={m.name}
-                      className="h-full w-full object-cover grayscale transition-all duration-[1.4s] group-hover:scale-[1.04] group-hover:grayscale-0"
+                      className="h-full w-full object-cover transition-transform duration-[1.4s] group-hover:scale-[1.04]"
                     />
                   </div>
                   <figcaption className="border-t border-white/10 p-4 sm:p-5">
